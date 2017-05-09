@@ -8,12 +8,13 @@ import {
 } from 'react-router-dom'
 import Home from './Home'
 import Intro from './Intro'
+import User from './User'
+import LearnMore from './Department/LearnMore'
 import DashboardContainer from '../containers/Dashboard'
+import SubmitContainer from '../containers/Submit'
 import ServiceContainer from '../containers/Service'
 import DepartmentContainer from '../containers/Department'
-import LearnMore from './Department/LearnMore'
 import ExplainContainer from '../containers/Explain'
-import User from './User'
 import { firebaseAuth } from '../config/constants'
 import { logout } from '../helpers/auth'
 import { Provider } from 'react-redux'
@@ -88,6 +89,7 @@ export default class App extends Component {
                 <Route path='/service/:service_id/department/:id/explain'
                   render={props => <ExplainContainer {...props}/>}
                 />
+                <Route path='/submit' render={props => <SubmitContainer {...props}/>} />
                 <Route path='/user' render={props => {
                   return <User isAuthed={this.state.authed}
                     handleLogout={this.handleLogout.bind(this)}

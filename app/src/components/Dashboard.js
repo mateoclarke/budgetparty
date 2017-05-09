@@ -26,7 +26,8 @@ export default class Dashboard extends Component {
 
         <div className="Dashboard__body">
           {services.map(service => {
-            return isLinkClickAllowed(service)
+            // return isLinkClickAllowed(service)
+            return true
               ?
                 <Link to={getServiceLink(service)} key={service.index}>
                   <PartyLevel {...service} />
